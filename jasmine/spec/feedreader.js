@@ -10,7 +10,7 @@ $(function() {
     * feeds definitions, the allFeeds variable in our application.
     */
     describe('RSS Feeds', function() {
-        /* This is the first test - it tests to make sure that the
+        /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
          * empty. 
          */
@@ -25,16 +25,17 @@ $(function() {
         it('URL are defined', function(){
            allFeeds.forEach(function(item){
             expect(item.url).toBeDefined();
-            expect(item.url).not.toBe(null);
+            expect(item.url.length).toBeGreaterThan(0);
+
            })
         });
 
         // This test loops through each feed in the allFeeds object and ensures it has a name definedand that the name is not empty.
-         */
+         
          it('names are defined', function(){
            allFeeds.forEach(function(item){
             expect(item.name).toBeDefined();
-            expect(item.url).not.toBe(null);
+            expect(item.name.length).toBeGreaterThan(0);
 
            })
         });
